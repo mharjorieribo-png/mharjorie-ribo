@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    background:#111827;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+nav h2{
+    color:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#3b82f6;
+}
+
+/* HERO */
+header{
+    text-align:center;
+    padding:70px 20px;
+    background:white;
+}
+
+.profile-img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-top:20px;
+    border:4px solid #111827;
+    transition:0.4s;
+}
+
+.profile-img:hover{
+    transform:scale(1.05);
+}
+
+header h1{
+    margin-top:15px;
+    font-size:30px;
+}
+
+.subtitle{
+    color:gray;
+    margin-top:5px;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:20px;
+    display:inline-block;
+    padding:10px 20px;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#2563eb;
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.section{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+}
+
+.section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.section h2{
+    margin-bottom:15px;
+    border-bottom:2px solid #3b82f6;
+    padding-bottom:5px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111827;
+    color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:10px;
+        margin-top:10px;
+    }
+
+    .profile-img{
+        width:130px;
+        height:130px;
+    }
+
+    header h1{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#objective">Objective</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Your Name</h1>
+    <img src="4.jpg" alt="Profile Picture" class="profile-img">
+     <h1>Mharjorie E. Ribo</h1>
+    <p class="subtitle">BS Information Technology | 3rd Year</p>
+    <a href="#contact" class="btn">Contact Me</a>
+</header>
+
+<div class="container">
+
+    <div class="section" id="objective">
+        <h2>Career Objective</h2>
+        <p>To obtain a challenging position in the IT industry where I can apply my technical skills and grow professionally.</p>
+    </div>
+
+    <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>Basic Java Programming</li>
+            <li>Problem Solving</li>
+            <li>Team Collaboration</li>
+        </ul>
+    </div>
+
+    <div class="section" id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Personal Portfolio Website</li>
+        </ul>
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: mharjorieribo@gmail.com </p>
+        <p>Phone: 09302466820</p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Mharjorie E. Ribo | Professional Portfolio
+</footer>
+
+<script>
+// Scroll animation
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < window.innerHeight - 100){
+            section.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
